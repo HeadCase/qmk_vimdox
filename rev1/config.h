@@ -1,5 +1,5 @@
-/*
-Copyright 2018 Mattia Dal Ben <matthewdibi@gmail.com>
+
+/* Copyright 2022 Mantas Jurkuvenas
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -20,11 +20,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0x4D44 // "MD"
-#define PRODUCT_ID      0x5244 // "RD"
-#define DEVICE_VER      0x0100
-#define MANUFACTURER    Mantastic
-#define PRODUCT         The Vimdox Keyboard
+#define VENDOR_ID 0x4D44  // "MD"
+#define PRODUCT_ID 0x5244 // "RD"
+#define DEVICE_VER 0x0100
+#define MANUFACTURER Mantastic
+#define PRODUCT The Vimdox Keyboard
 
 /* key matrix size */
 // Rows are doubled-up
@@ -40,7 +40,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
-
+#define RGBLIGHT_LIMIT_VAL 250
+#define LED_DISABLE_WHEN_USB_SUSPENDED
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
 
@@ -61,9 +62,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* ws2812 RGB LED */
 #define RGB_DI_PIN F4
 
-#define RGBLED_NUM 21    // Number of LEDs
+#define RGBLED_NUM 21 // Number of LEDs
 
-#define RGBLIGHT_SPLIT   // sync LEDs between RIGHT and LEFT hand
+#define RGBLIGHT_SPLIT // sync LEDs between RIGHT and LEFT hand
 
 #define ENCODERS_PAD_A \
     { E6 }

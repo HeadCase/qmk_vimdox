@@ -1,6 +1,4 @@
-/*
-Copyright 2018 Mattia Dal Ben <matthewdibi@gmail.com>
-
+/* Copyright 2022 Mantas Jurkuvenas
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
