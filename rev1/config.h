@@ -1,4 +1,3 @@
-
 /* Copyright 2022 Mantas Jurkuvenas
 
 This program is free software: you can redistribute it and/or modify
@@ -23,8 +22,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID 0x4D44  // "MD"
 #define PRODUCT_ID 0x5244 // "RD"
 #define DEVICE_VER 0x0100
-#define MANUFACTURER Mantastic
-#define PRODUCT The Vimdox Keyboard
+// #define MANUFACTURER Mantastic
+// #define PRODUCT TheVimdoxKeyboard
 
 /* key matrix size */
 // Rows are doubled-up
@@ -43,7 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_LIMIT_VAL 250
 #define LED_DISABLE_WHEN_USB_SUSPENDED
 /* define if matrix has ghost */
-//#define MATRIX_HAS_GHOST
+// #define MATRIX_HAS_GHOST
 
 /* number of backlight levels */
 // #define BACKLIGHT_LEVELS 3
@@ -84,8 +83,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define NO_PRINT
 
 /* disable action features */
-//#define NO_ACTION_LAYER
-//#define NO_ACTION_TAPPING
-//#define NO_ACTION_ONESHOT
-//#define NO_ACTION_MACRO
-//#define NO_ACTION_FUNCTION
+// #define NO_ACTION_LAYER
+// #define NO_ACTION_TAPPING
+// #define NO_ACTION_ONESHOT
+// #define NO_ACTION_MACRO
+// #define NO_ACTION_FUNCTION
