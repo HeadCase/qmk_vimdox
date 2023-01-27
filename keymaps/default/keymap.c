@@ -99,3 +99,28 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 
     return false;
 }
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (get_highest_layer(state)) {
+        case _QWERTY:
+            rgblight_reload_from_eeprom();
+            break;
+        case _SYMB:
+            // rgblight_disable_noeeprom();
+            rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
+            rgblight_setrgb(RGB_GREEN);
+            break;
+        case _NAV:
+            rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
+            rgblight_setrgb(RGB_YELLOW);
+            break;
+        case _ADJUST:
+            rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
+            rgblight_setrgb(RGB_WHITE);
+            break;
+        default: // for any other layers, or the default layer
+            rgblight_reload_from_eeprom();
+            break;
+    }
+    return state;
+}

@@ -16,6 +16,11 @@
 
 #pragma once
 
-#include "rev2.h"
-
 #include "quantum.h"
+
+#if defined(KEYBOARD_vimdox_rev1)
+#    include "rev1.h"
+#elif defined(KEYBOARD_vimdox_rev2)
+#    include "rev2.h"
+
+#endif //

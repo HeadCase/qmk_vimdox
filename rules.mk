@@ -21,7 +21,7 @@ SPLIT_KEYBOARD = yes
 
 POINTING_DEVICE_ENABLE = yes
 POINTING_DEVICE_DRIVER = analog_joystick
-DEFAULT_FOLDER = vimdox/rev2
+# DEFAULT_FOLDER = vimdox/rev2
 
 # Disable unsupported hardware
 AUDIO_SUPPORTED = no
