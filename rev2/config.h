@@ -61,7 +61,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGB_DI_PIN F4
 
 #define RGBLED_NUM 21 // Number of LEDs
-
+#define RGBLIGHT_LAYERS
 #define RGBLIGHT_SPLIT // sync LEDs between RIGHT and LEFT hand
 
 #define ENCODERS_PAD_A \
