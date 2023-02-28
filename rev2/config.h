@@ -30,11 +30,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 8
 #define MATRIX_COLS 6
 #define MATRIX_ROW_PINS \
-    { D1, D0, B2, B6 }
+    { GP2, GP3, GP19, GP10 }
 
 // wiring of each half
 #define MATRIX_COL_PINS \
-    { D4, C6, D7, E6, B4, B5 }
+    { GP4, GP5, GP6, GP7, GP8, GP9 }
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
@@ -48,26 +48,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
-
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP25
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
 /* serial.c configuration for split keyboard */
-#define SOFT_SERIAL_PIN D2
+#define SOFT_SERIAL_PIN GP1
+#define SERIAL_PIO_USE_PIO1 // Force the usage of PIO1 peripheral, by default the Serial implementation uses the PIO0 peripheral
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
-
+#define I2C1_SDA_PIN GP12
+#define I2C1_SCL_PIN GP13
 /* ws2812 RGB LED */
-#define RGB_DI_PIN F4
+#define RGB_DI_PIN GP29
 
 #define RGBLED_NUM 21 // Number of LEDs
 #define RGBLIGHT_LAYERS
 #define RGBLIGHT_SPLIT // sync LEDs between RIGHT and LEFT hand
 
 #define ENCODERS_PAD_A \
-    { F5 }
+    { GP18 }
 #define ENCODERS_PAD_B \
-    { F6 }
+    { GP26 }
 
 #define ENCODER_RESOLUTION 2
 /*
