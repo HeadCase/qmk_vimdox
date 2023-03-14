@@ -18,13 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config_common.h"
 
-/* USB Device descriptor parameter */
-// #define VENDOR_ID 0x4D44  // "MD"
-// #define PRODUCT_ID 0x5244 // "RD"
-// #define DEVICE_VER 0x0100
-// #define MANUFACTURER Mantastic
-// #define PRODUCT TheVimdoxKeyboard
-
 /* key matrix size */
 // Rows are doubled-up
 #define MATRIX_ROWS 8
@@ -49,7 +42,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP25
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
 /* serial.c configuration for split keyboard */
 #define SOFT_SERIAL_PIN GP1
@@ -59,6 +51,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
+#define I2C_DRIVER I2CD1
 #define I2C1_SDA_PIN GP12
 #define I2C1_SCL_PIN GP13
 /* ws2812 RGB LED */
@@ -73,21 +66,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define ENCODERS_PAD_B \
     { GP26 }
 
-#define ENCODER_RESOLUTION 2
-/*
- * Feature disable options
- *  These options are also useful to firmware size reduction.
- */
-
-/* disable debug print */
-// #define NO_DEBUG
-
-/* disable print */
-// #define NO_PRINT
-
-/* disable action features */
-// #define NO_ACTION_LAYER
-// #define NO_ACTION_TAPPING
-// #define NO_ACTION_ONESHOT
-// #define NO_ACTION_MACRO
-// #define NO_ACTION_FUNCTION
+#define SPLIT_POINTING_ENABLE
+#define POINTING_DEVICE_RIGHT
+#define POINTING_DEVICE_ROTATION_90
+#define ANALOG_JOYSTICK_X_AXIS_PIN GP27
+#define ANALOG_JOYSTICK_Y_AXIS_PIN GP28

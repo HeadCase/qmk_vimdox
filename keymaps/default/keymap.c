@@ -17,15 +17,7 @@ enum custom_keycodes {
 };
 
 // Shortcut to make keymap more readable
-#define SYM_L MO(_SYMB)
-
-#define KC_ALAS LALT_T(KC_PAST)
-#define KC_CTPL LCTL_T(KC_BSLS)
-#define KC_NAGR LT(_NAV, KC_GRV)
-#define KC_NAMI LT(_NAV, KC_MINS)
-
-#define KC_ADEN LT(_ADJUST, KC_END)
-#define KC_ADPU LT(_ADJUST, KC_PGUP)
+#define MY_BSPC LT(0, KC_BSPC)
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -37,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_LSFT, KC_Z, KC_X, KC_C, KC_D, KC_V,                                          KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH, TT(_NAV),
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                        KC_SPC, TT(_SYMB), KC_LCTL,                     KC_LALT, KC_BSPC, KC_ENT
+                                        KC_SPC, TT(_SYMB), KC_LCTL,                     KC_LALT, MY_BSPC, KC_ENT
         //`--------------------------'  `--------------------------'
 
         ),
@@ -48,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         TO(_QWERTY), KC_PERC, KC_DLR, KC_HASH, KC_ASTR, KC_LPRN,                        KC_RPRN, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_PGUP,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        KC_LSFT, KC_INT4, KC_CIRC, KC_GRV, KC_INT3, KC_LBRC,                              KC_RBRC, KC_INT1, KC_DQUO, KC_TILD, KC_NUBS, KC_PGDN,
+        KC_LSFT, KC_INT4, KC_CIRC, KC_GRV, KC_INT3, KC_LBRC,                              KC_RBRC, KC_QUOT, KC_DQUO, KC_TILD, KC_NUBS, KC_PGDN,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                             KC_TRNS, KC_TRNS, KC_TRNS,                KC_TRNS, KC_TRNS, KC_TRNS
         //`--------------------------'  `--------------------------'
@@ -70,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         XXXXXXX, KC_WSCH, XXXXXXX, KC_SLEP, KC_WAKE, KC_PWR,                           RGB_M_P, RGB_M_B, RGB_M_R, RGB_M_SW, RGB_M_K, RGB_M_G,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        TO(_QWERTY), KC_MPRV, KC_MNXT, KC_MPLY, KC_MSTP, KC_MSEL,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        TO(_QWERTY), KC_MPRV, KC_MNXT, KC_MPLY, KC_MSTP, KC_MSEL,                      RGB_HUI, RGB_VAI, RGB_VAD, XXXXXXX, XXXXXXX, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         RGB_MOD, RGB_TOG, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -130,4 +122,25 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(2, layer_state_cmp(state, _SYMB));
     rgblight_set_layer_state(3, layer_state_cmp(state, _ADJUST));
     return state;
+}
+
+// Helper for implementing tap vs. long-press keys. Given a tap-hold
+// key event, replaces the hold function with `long_press_keycode`.
+static bool process_tap_or_long_press_key(keyrecord_t* record, uint16_t long_press_keycode) {
+    if (record->tap.count == 0) { // Key is being held.
+        if (record->event.pressed) {
+            tap_code16(long_press_keycode);
+        }
+        return false; // Skip default handling.
+    }
+    return true; // Continue default handling.
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+    switch (keycode) {
+        case MY_BSPC: // Comma on tap, Ctrl+C on long press.
+            return process_tap_or_long_press_key(record, C(KC_BSPC));
+    }
+
+    return true;
 }

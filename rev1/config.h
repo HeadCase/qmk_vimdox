@@ -61,6 +61,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* ws2812 RGB LED */
 #define RGB_DI_PIN F4
 
+#define RGBLIGHT_LAYERS
 #define RGBLED_NUM 21 // Number of LEDs
 
 #define RGBLIGHT_SPLIT // sync LEDs between RIGHT and LEFT hand
@@ -76,15 +77,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *  These options are also useful to firmware size reduction.
  */
 
-/* disable debug print */
-// #define NO_DEBUG
-
-/* disable print */
-// #define NO_PRINT
-
-/* disable action features */
-// #define NO_ACTION_LAYER
-// #define NO_ACTION_TAPPING
-// #define NO_ACTION_ONESHOT
-// #define NO_ACTION_MACRO
-// #define NO_ACTION_FUNCTION
+#define SPLIT_POINTING_ENABLE
+#define POINTING_DEVICE_RIGHT
+#define ANALOG_JOYSTICK_X_AXIS_PIN F5
+#define ANALOG_JOYSTICK_Y_AXIS_PIN F6
+#define POINTING_DEVICE_ROTATION_180
+#define ANALOG_JOYSTICK_SPEED_REGULATOR 15

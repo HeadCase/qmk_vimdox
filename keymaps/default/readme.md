@@ -1,1 +1,2 @@
-# The default keymap for VimDox
+# The default keymap for Neodox
+

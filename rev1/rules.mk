@@ -19,8 +19,8 @@ RGBLIGHT_ENABLE = yes       # Enable WS2812 RGB underlight.
 ENCODER_ENABLE = yes
 SPLIT_KEYBOARD = yes
 
-# POINTING_DEVICE_ENABLE = yes
-# POINTING_DEVICE_DRIVER = analog_joystick
+ POINTING_DEVICE_ENABLE = yes
+ POINTING_DEVICE_DRIVER = analog_joystick
 # DEFAULT_FOLDER = vimdox/rev2
 
 # Disable unsupported hardware

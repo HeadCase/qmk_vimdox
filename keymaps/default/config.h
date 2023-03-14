@@ -33,10 +33,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_SAT_STEP 8
 #define RGBLIGHT_VAL_STEP 8
 #define RGBLIGHT_SLEEP
-
-#define SPLIT_POINTING_ENABLE
-#define POINTING_DEVICE_RIGHT
-#define ANALOG_JOYSTICK_X_AXIS_PIN F5
-#define ANALOG_JOYSTICK_Y_AXIS_PIN F6
-#define POINTING_DEVICE_ROTATION_180
-#define ANALOG_JOYSTICK_SPEED_REGULATOR 15

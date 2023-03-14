@@ -18,9 +18,9 @@
 
 #include "quantum.h"
 
-#if defined(KEYBOARD_vimdox_rev1)
+#if defined(KEYBOARD_neodox_rev1)
 #    include "rev1.h"
-#elif defined(KEYBOARD_vimdox_rev2)
+#elif defined(KEYBOARD_neodox_rev2)
 #    include "rev2.h"
 
 #endif //
