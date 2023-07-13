@@ -8,5 +8,4 @@ BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
 
 WS2812_DRIVER = vendor
 SERIAL_DRIVER = vendor
-OPT_DEFS += -DHAL_USE_I2C=TRUE
-
+EXTRAKEY_ENABLE = yes       # Audio control and System control

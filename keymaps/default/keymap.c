@@ -64,33 +64,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         TO(_QWERTY), KC_MPRV, KC_MNXT, KC_MPLY, KC_MSTP, KC_MSEL,                      RGB_HUI, RGB_VAI, RGB_VAD, XXXXXXX, XXXXXXX, XXXXXXX,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        RGB_MOD, RGB_TOG, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
+        RGB_MOD, RGB_TOG, RGB_SAD, RGB_VAD, KC_VOLU, KC_VOLD,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            KC_TRNS,KC_TRNS, KC_TRNS,                   KC_TRNS,KC_TRNS,KC_TRNS 
+                                            KC_TRNS,KC_TRNS, KC_TRNS,                   KC_TRNS,KC_TRNS,KC_TRNS
         //`--------------------------'  `--------------------------'
         )};
-// clang-format on
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (get_highest_layer(layer_state | default_layer_state) > 0) {
-        if (index == 0) {
-            if (clockwise) {
-                tap_code(KC_VOLU);
-            } else {
-                tap_code(KC_VOLD);
-            }
-        }
-    } else { /* Layer 0 */
-        if (index == 0) {
-            if (clockwise) {
-                tap_code(KC_MS_WH_DOWN);
-            } else {
-                tap_code(KC_MS_WH_UP);
-            }
-        }
-    }
+// KC_MS_WH_UP
+// KC_MS_WH_DOWN
 
-    return false;
-}
+// clang-format on
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [_QWERTY] = {ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
+    [_SYMB]   = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(RGB_SAD, RGB_SAI)},
+    [_NAV]    = {ENCODER_CCW_CW(KC_MSTP, KC_MPLY), ENCODER_CCW_CW(RGB_SPD, RGB_SPI)},
+    [_ADJUST] = {ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT)},
+};
 
 // Light LEDs 9 & 10 in cyan when keyboard layer 1 is active
 const rgblight_segment_t PROGMEM my_layer1_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_CYAN});

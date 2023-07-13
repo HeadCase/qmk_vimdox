@@ -51,9 +51,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
-#define I2C_DRIVER I2CD1
-#define I2C1_SDA_PIN GP12
-#define I2C1_SCL_PIN GP13
+// #define I2C_DRIVER I2CD1
+// #define I2C1_SDA_PIN GP12
+// #define I2C1_SCL_PIN GP13
 /* ws2812 RGB LED */
 #define RGB_DI_PIN GP29
 
@@ -62,9 +62,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_SPLIT // sync LEDs between RIGHT and LEFT hand
 
 #define ENCODERS_PAD_A \
-    { GP18 }
+    { GP12 }
 #define ENCODERS_PAD_B \
-    { GP26 }
+    { GP13 }
 
 #define SPLIT_POINTING_ENABLE
 #define POINTING_DEVICE_RIGHT
