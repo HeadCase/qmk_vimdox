@@ -1,4 +1,4 @@
-/* Copyright 2020 QMK
+/* Copyright 2022 splitkb.com <support@splitkb.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,11 +13,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#pragma once
-#include_next <mcuconf.h>
 
-// #undef RP_I2C_USE_I2C0
-// #define RP_I2C_USE_I2C0 TRUE
-//
-// #undef RP_I2C_USE_I2C1
-// #define RP_I2C_USE_I2C1 TRUE
+#pragma once
+
+#ifdef RGBLIGHT_ENABLE
+#   define RGBLIGHT_EFFECT_BREATHING
+#endif
