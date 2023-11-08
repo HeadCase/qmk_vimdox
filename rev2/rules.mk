@@ -22,6 +22,7 @@
 
 #BOARD = GENERIC_RP_RP2040
 
+ENCODER_MAP_ENABLE = yes
 #BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
 #ENCODER_MAP_ENABLE = yes
 WS2812_DRIVER = vendor

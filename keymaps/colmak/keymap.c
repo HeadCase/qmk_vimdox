@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         XXXXXXX, KC_WSCH, XXXXXXX, KC_SLEP, KC_WAKE, KC_PWR,                           RGB_M_P, RGB_M_B, RGB_M_R, RGB_M_SW, RGB_M_K, RGB_M_G,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        TO(QWERTY), KC_MPRV, KC_MNXT, KC_MPLY, KC_MSTP, KC_MSEL,                      RGB_HUI, RGB_VAI, RGB_VAD, XXXXXXX, XXXXXXX, XXXXXXX,
+        TO(QWERTY), KC_MPRV, KC_MNXT, KC_MPLY, KC_MSTP, KC_MSEL,                      RGB_HUI,RGB_HUD, RGB_VAI, RGB_VAD, RGB_SAI, RGB_SAD,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         RGB_MOD, RGB_TOG, RGB_SAD, RGB_VAD, KC_VOLU, KC_VOLD,                         RGB_MOD, RGB_RMOD, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -66,12 +66,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         )};
 
 
-//const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-  //@  [QWERTY] = {ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
-    //@[SYMB]   = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(RGB_SAD, RGB_SAI)},
-   // [NAV]    = {ENCODER_CCW_CW(KC_MSTP, KC_MPLY), ENCODER_CCW_CW(RGB_SPD, RGB_SPI)},
-   // [ADJUST] = {ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT)},
-//};
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [QWERTY] = {ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
+  [SYMB]   = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(RGB_SAD, RGB_SAI)},
+    [NAV]    = {ENCODER_CCW_CW(KC_MSTP, KC_MPLY), ENCODER_CCW_CW(RGB_SPD, RGB_SPI)},
+    [ADJUST] = {ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT)},
+};
 
 
 
