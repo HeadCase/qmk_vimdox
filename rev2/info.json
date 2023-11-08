@@ -3,6 +3,8 @@
     "usb": {
         "pid": "0x343A"
     },
+    "board" : "GENERIC_RP_RP2040",
+    "bootloader" : "RP2040",
     "bootmagic": {
         "matrix": [0, 5]
     },
@@ -103,7 +105,12 @@
         "led_count": 54,
         "split": true,
         "split_count": [27, 27],
-        "max_brightness": 255
+        "max_brightness": 255,
+        "animations":{
+            "breathing": true,
+            "rainbow_mood": true,
+            "snake": true
+        }
     },
     "ws2812": {
         "pin": "GP29"

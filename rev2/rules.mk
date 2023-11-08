@@ -16,14 +16,14 @@
 # presence of this file is required for QMK to compile it.
 #
 #
-MCU = RP2040
+#MCU = RP2040
 # Bootloader selection
-BOOTLOADER = rp2040
+#BOOTLOADER = rp2040
 
-BOARD = GENERIC_RP_RP2040
+#BOARD = GENERIC_RP_RP2040
 
 #BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
-ENCODER_MAP_ENABLE = yes
+#ENCODER_MAP_ENABLE = yes
 WS2812_DRIVER = vendor
 SERIAL_DRIVER = vendor
 #EXTRAKEY_ENABLE = yes       # Audio control and System control
