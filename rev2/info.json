@@ -4,7 +4,7 @@
         "pid": "0x343A"
     },
     "board" : "GENERIC_RP_RP2040",
-    "bootloader" : "RP2040",
+    "bootloader" : "rp2040",
     "bootmagic": {
         "matrix": [0, 5]
     },
